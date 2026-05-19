@@ -19,3 +19,13 @@ class Solution(object):
 # Alternative: sort first (O(n log n)), then check adjacent elements.
 # Duplicates will always be neighbours after sorting.
 # Time: O(n log n) | Space: O(1) — better on space, worse on time.
+
+# Another alternative Solution, self-explanitory
+
+class Solution(object):
+    def containsDuplicate(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
+        return len(set(nums)) != len(nums)
