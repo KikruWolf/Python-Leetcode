@@ -1,11 +1,18 @@
-nums = [2,7,11,15]
-target = 9
-seen = {}
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        seen = {}
 
-print(nums)
+        for i, num in enumerate(nums):
+            complement = target - num
+            if complement in seen:
+                return [seen[complement], i]
+            seen[num] = i
 
-for i,num in enumerate(nums):
-    print(i,num)
-    complement = target - num
-    if complement in seen:
-        print([seen[complement], i])
+# For each number, calculate its complement (target - num) and check if seen before.
+# Store each number and its index as we go so complements can be looked up in O(1).
+# Time: O(n) | Space: O(n)
